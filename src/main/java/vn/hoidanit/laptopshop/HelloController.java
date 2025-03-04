@@ -11,7 +11,23 @@ public class HelloController {
 
     public String index() {
 
-        return "Hello World NT Huy1";
+        return "Hello World NT Huy66";
+
+    }
+
+    @GetMapping("/user")
+
+    public String userPage() {
+
+        return "chỉ có người dùng truy cập";
+
+    }
+
+    @GetMapping("/admin")
+
+    public String adminPage() {
+
+        return "chỉ có admin truy cập";
 
     }
 
