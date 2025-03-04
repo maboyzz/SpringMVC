@@ -18,17 +18,13 @@ public class HelloController {
     @GetMapping("/user")
 
     public String userPage() {
-
         return "chỉ có người dùng truy cập";
-
     }
 
     @GetMapping("/admin")
 
     public String adminPage() {
-
         return "chỉ có admin truy cập";
-
     }
 
 }
