@@ -28,6 +28,11 @@ public class UserController {
 
         return "hello";
     }
+
+    @RequestMapping("/admin/user")
+    public String getAdminPage(Model model) {
+        return "admin/user/create";
+    }
 }
 
 // @RestController
