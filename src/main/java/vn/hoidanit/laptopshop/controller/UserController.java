@@ -6,6 +6,8 @@ import vn.hoidanit.laptopshop.domain.User;
 import vn.hoidanit.laptopshop.repository.UserRepository;
 import vn.hoidanit.laptopshop.service.UserService;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +28,10 @@ public class UserController {
 
     @RequestMapping("/")
     public String getHomePage(Model model) {
+
+        List<User> aUsers = this.userService.getAllUserByEmail("nthuy311023@gmail.com");
+        System.out.println(aUsers);
+
         model.addAttribute("huy", "test");
         model.addAttribute("huy1", "nguyen tran huy");
 
