@@ -30,6 +30,6 @@ public class UserService {
     }
 
     public List<User> getAllUserByEmail(String email) {
-        return this.userRepository.findByEmail(email);
+        return this.userRepository.findOneByEmail(email);
     }
 }
