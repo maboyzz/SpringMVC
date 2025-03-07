@@ -38,6 +38,10 @@
                                     <li class="list-group-item">Address: ${user.address}</li>
                                 </ul>
                             </div>
+                            <hr />
+                            <div class="d-flex justify-content-between">
+                                <a href="/admin/user" class="btn btn-success">Back</a>
+                            </div>
                         </div>
                     </div>
                 </div>

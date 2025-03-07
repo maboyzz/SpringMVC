@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class UserController {
@@ -63,5 +65,26 @@ public class UserController {
     public String createUserPage(Model model, @ModelAttribute("newUser") User huy) {
         this.userService.handleSaveUser(huy);
         return "redirect:/admin/user";
+    }
+
+    @RequestMapping("/admin/user/update/{id}")
+    public String getUpdateUserPage(Model model, @PathVariable long id) {
+        User currentUser = this.userService.getUserById(id);
+        model.addAttribute("newUser", currentUser);
+        return "admin/user/update";
+    }
+
+    @PostMapping("/admin/user/update")
+    public String potUpdateUser(Model model, @ModelAttribute("newUser") User huy) {
+        User currentUser = this.userService.getUserById(huy.getId());
+        if (currentUser != null) {
+            currentUser.setAddress(huy.getAddress());
+            currentUser.setFullName(huy.getFullName());
+            currentUser.setPhone(huy.getPhone());
+
+            this.userService.handleSaveUser(currentUser);
+        }
+        return "redirect:/admin/user";
+
     }
 }
