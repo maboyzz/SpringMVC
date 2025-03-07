@@ -1,7 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
             <!DOCTYPE html>
             <html lang="en">
 
@@ -29,39 +28,37 @@
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
                                     <li class="breadcrumb-item"><a href="/admin/user">Manage user</a></li>
-                                    <li class="breadcrumb-item active">update user</li>
+                                    <li class="breadcrumb-item active">detail user</li>
                                 </ol>
 
 
                                 <div class="row">
-                                    <div class="col-md-6 col-12 mx-auto">
-                                        <h3>Update a user</h3>
+                                    <div class="col-12 mx-auto">
+                                        <div class="d-flex justify-content-between">
+                                            <h3>Users Details with id = ${user.id}</h3>
+                                        </div>
                                         <hr />
-                                        <form:form method="post" action="/admin/user/update" modelAttribute="newUser">
-                                            <div class="mb-3" style="display: none;">
-                                                <label class="form-label">ID:</label>
-                                                <form:input class="form-control" path="id" type="number" />
+
+                                        <div class="card" style="width: 60%;">
+
+                                            <div class="card-header">
+
+                                                User Information
+
                                             </div>
-                                            <div class="mb-3">
-                                                <label class="form-label">Email address:</label>
-                                                <form:input class="form-control" path="email" type="email"
-                                                    disabled="true" />
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="form-label">Full name:</label>
-                                                <form:input class="form-control" path="fullName" type="text" />
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="form-label">Address:</label>
-                                                <form:input class="form-control" path="address" type="text" />
-                                            </div>
-                                            <div class="mb-3">
-                                                <label class="form-label">Phone number:</label>
-                                                <form:input class="form-control" path="phone" type="text" />
-                                            </div>
-                                            <button type="submit" class="btn btn-success">update</button>
+
+                                            <ul class="list-group list-group-flush">
+
+                                                <li class="list-group-item">ID: ${user.id}</li>
+                                                <li class="list-group-item">Email: ${user.email}</li>
+                                                <li class="list-group-item">Full Name: ${user.fullName}</li>
+                                                <li class="list-group-item">Address: ${user.address}</li>
+                                            </ul>
+                                        </div>
+                                        <hr />
+                                        <div class="d-flex justify-content-between">
                                             <a href="/admin/user" class="btn btn-primary">Back</a>
-                                        </form:form>
+                                        </div>
                                     </div>
                                 </div>
 
