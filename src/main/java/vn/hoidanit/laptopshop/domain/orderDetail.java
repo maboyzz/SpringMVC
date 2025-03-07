@@ -12,20 +12,21 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "orders")
-public class Order {
+@Table(name = "order_detail")
+public class orderDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private double totalPrice;
+    private long quantity;
+    private double price;
 
-    // nhieu don hang thuoc 1 nguoi dung
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "order_id")
+    private Order order;
 
-    @OneToMany(mappedBy = "order")
-    private List<orderDetail> orderDetails;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 
     public long getId() {
         return id;
@@ -35,17 +36,25 @@ public class Order {
         this.id = id;
     }
 
-    public double getTotalPrice() {
-        return totalPrice;
+    public long getQuantity() {
+        return quantity;
     }
 
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
+    public void setQuantity(long quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     @Override
     public String toString() {
-        return "\nOrder id=" + id + ", totalPrice=" + totalPrice;
+        return "orderDetail [id=" + id + ", quantity=" + quantity + ", price=" + price + "]";
     }
 
 }
