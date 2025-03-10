@@ -96,6 +96,8 @@ public class UserController {
             currentUser.setAddress(huy.getAddress());
             currentUser.setFullName(huy.getFullName());
             currentUser.setPhone(huy.getPhone());
+            currentUser.setAvatar(huy.getAvatar());
+            currentUser.setRole(this.userService.getRoleByName(huy.getRole().getName()));
             this.userService.handleSaveUser(currentUser);
         }
         return "redirect:/admin/user";
