@@ -18,6 +18,9 @@
                 href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap"
                 rel="stylesheet">
 
+            <link
+                href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+                rel="stylesheet">
             <!-- Icon Font Stylesheet -->
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
             <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -80,38 +83,14 @@
                     <div class="tab-class text-center">
                         <div class="row g-4">
                             <div class="col-lg-4 text-start">
-                                <h1>Our Organic Products</h1>
+                                <h1>Gợi ý cho bạn</h1>
                             </div>
                             <div class="col-lg-8 text-end">
                                 <ul class="nav nav-pills d-inline-flex text-center mb-5">
                                     <li class="nav-item">
                                         <a class="d-flex m-2 py-2 bg-light rounded-pill active" data-bs-toggle="pill"
                                             href="#tab-1">
-                                            <span class="text-dark" style="width: 130px;">All Products</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill"
-                                            href="#tab-2">
-                                            <span class="text-dark" style="width: 130px;">Vegetables</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill"
-                                            href="#tab-3">
-                                            <span class="text-dark" style="width: 130px;">Fruits</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill"
-                                            href="#tab-4">
-                                            <span class="text-dark" style="width: 130px;">Bread</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill"
-                                            href="#tab-5">
-                                            <span class="text-dark" style="width: 130px;">Meat</span>
+                                            <span class="text-dark" style="width: 130px;">Toàn bộ sản phẩm</span>
                                         </a>
                                     </li>
                                 </ul>
