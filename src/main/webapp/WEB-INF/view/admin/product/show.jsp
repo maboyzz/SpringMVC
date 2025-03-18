@@ -9,7 +9,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
             <meta name="description" content="" />
             <meta name="author" content="" />
-            <title>Product - NT HUY</title>
+            <title>Manage Product - NT HUY</title>
             <link href="/css/styles.css" rel="stylesheet" />
             <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         </head>
@@ -22,7 +22,7 @@
                 <div id="layoutSidenav_content">
                     <main>
                         <div class="container-fluid px-4">
-                            <h1 class="mt-4">Dashboard</h1>
+                            <h1 class="mt-4">Product</h1>
                             <ol class="breadcrumb mb-4">
                                 <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
                                 <li class="breadcrumb-item active">Product</li>
@@ -34,7 +34,7 @@
                                         <a href="/admin/product/create" class="btn btn-primary">create a product</a>
                                     </div>
                                     <hr />
-                                    <table class="table table-hover" border="1px">
+                                    <table class="table table-hover">
                                         <thead>
                                             <tr>
                                                 <th scope="col">ID</th>
@@ -45,18 +45,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <c:forEach var="user" items="${user}">
+                                            <c:forEach var="product" items="${product}">
                                                 <tr>
-                                                    <td>${user.id}</td>
-                                                    <td>${user.email}</td>
-                                                    <td>${user.fullName}</td>
-                                                    <td>${user.role.name}</td>
+                                                    <td>${product.id}</td>
+                                                    <td>${product.name}</td>
+                                                    <td>${product.price}</td>
+                                                    <td>${product.factory}</td>
                                                     <td>
-                                                        <a href="/admin/user/${user.id}"
+                                                        <a href="/admin/product/${product.id}"
                                                             class="btn btn-success">View</a>
-                                                        <a href="/admin/user/update/${user.id}"
+                                                        <a href="/admin/product/update/${product.id}"
                                                             class="btn btn-warning">Update</a>
-                                                        <a href="/admin/user/delete/${user.id}"
+                                                        <a href="/admin/product/delete/${product.id}"
                                                             class="btn btn-danger">Delete</a>
 
                                                     </td>

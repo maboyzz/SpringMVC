@@ -10,7 +10,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <meta name="description" content="" />
                 <meta name="author" content="" />
-                <title>Create Product</title>
+                <title>Update Product</title>
                 <link href="/css/styles.css" rel="stylesheet" />
                 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -39,14 +39,18 @@
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
                                     <li class="breadcrumb-item"><a href="/admin/product">Product</a></li>
-                                    <li class="breadcrumb-item active">Create product</li>
+                                    <li class="breadcrumb-item active">Update product</li>
                                 </ol>
                                 <div class="row">
                                     <div class="col-md-6 col-12 mx-auto">
-                                        <h3>Create a product</h3>
+                                        <h3>Update a product</h3>
                                         <hr />
-                                        <form:form method="post" action="/admin/product/create"
+                                        <form:form method="post" action="/admin/product/update"
                                             modelAttribute="newProduct" class="row" enctype="multipart/form-data">
+                                            <div class="mb-3" style="display: none;">
+                                                <label class="form-label">ID:</label>
+                                                <form:input class="form-control" path="id" type="number" />
+                                            </div>
                                             <div class="mb-3 col-12 col-md-6">
                                                 <c:set var="nameHasBindError">
                                                     <form:errors path="name" cssClass="valid-feedback" />
@@ -129,7 +133,7 @@
                                             </div>
                                             <div class="col-12 mb-5">
                                                 <button type="submit" class="btn btn-success">create</button>
-                                                <a href="/admin/user" class="btn btn-primary">back</a>
+                                                <a href="/admin/product" class="btn btn-primary">back</a>
                                             </div>
                                         </form:form>
                                     </div>

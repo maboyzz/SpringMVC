@@ -101,13 +101,24 @@ public class UserController {
     }
 
     @PostMapping("/admin/user/update")
-    public String potUpdateUser(Model model, @ModelAttribute("newUser") User huy) {
+    public String potUpdateUser(Model model, @ModelAttribute("newUser") @Valid User huy,
+            BindingResult newUserBindingResult, MultipartFile file) {
+        List<FieldError> errors = newUserBindingResult.getFieldErrors();
+        for (FieldError error : errors) {
+            System.out.println(">>>>" + error.getField() + " - " + error.getDefaultMessage());
+        }
+        if (newUserBindingResult.hasErrors()) {
+            return "/admin/user/update";
+        }
         User currentUser = this.userService.getUserById(huy.getId());
         if (currentUser != null) {
+            if (!file.isEmpty()) {
+                String avatar = this.uploadService.HandleSaveUploadFile(file, "avatar");
+                currentUser.setAvatar(avatar);
+            }
             currentUser.setAddress(huy.getAddress());
             currentUser.setFullName(huy.getFullName());
             currentUser.setPhone(huy.getPhone());
-            currentUser.setAvatar(huy.getAvatar());
             currentUser.setRole(this.userService.getRoleByName(huy.getRole().getName()));
             this.userService.handleSaveUser(currentUser);
         }

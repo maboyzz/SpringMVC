@@ -11,7 +11,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <meta name="description" content="" />
                 <meta name="author" content="" />
-                <title>Dashboard - NT HUY</title>
+                <title>Update User</title>
 
                 <link href="/css/styles.css" rel="stylesheet" />
                 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -47,7 +47,7 @@
                     <div id="layoutSidenav_content">
                         <main>
                             <div class="container-fluid px-4">
-                                <h1 class="mt-4">Dashboard</h1>
+                                <h1 class="mt-4">User</h1>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
                                     <li class="breadcrumb-item"><a href="/admin/user">Manage user</a></li>
@@ -69,18 +69,36 @@
                                                 <form:input class="form-control" path="email" type="email"
                                                     disabled="true" />
                                             </div>
-                                            <div class="mb-3">
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <c:set var="nameHasBindError">
+                                                    <form:errors path="password" cssClass="valid-feedback" />
+                                                </c:set>
+                                                <label class="form-label">Password:</label>
+                                                <form:input
+                                                    class="form-control ${not empty nameHasBindError? 'is-invalid':''}"
+                                                    path="password" type="password" />
+                                                <form:errors path="password" cssClass="invalid-feedback" />
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label class="form-label">Phone number:</label>
+                                                <form:input class="form-control" path="phone" type="text" />
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <c:set var="nameHasBindError">
+                                                    <form:errors path="fullName" cssClass="valid-feedback" />
+                                                </c:set>
                                                 <label class="form-label">Full name:</label>
-                                                <form:input class="form-control" path="fullName" type="text" />
+                                                <form:input
+                                                    class="form-control ${not empty nameHasBindError? 'is-invalid':''}"
+                                                    path="fullName" type="text" />
+                                                <form:errors path="fullName" cssClass="invalid-feedback" />
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Address:</label>
                                                 <form:input class="form-control" path="address" type="text" />
                                             </div>
-                                            <div class="mb-3">
-                                                <label class="form-label">Phone number:</label>
-                                                <form:input class="form-control" path="phone" type="text" />
-                                            </div>
+
+
                                             <div class="mb-3 col-12 col-md-6">
                                                 <label class="form-label">ROLE</label>
                                                 <form:select class="form-select" path="role.name">

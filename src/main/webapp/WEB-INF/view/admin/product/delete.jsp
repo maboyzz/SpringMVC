@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
             <!DOCTYPE html>
             <html lang="en">
 
@@ -10,7 +11,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <meta name="description" content="" />
                 <meta name="author" content="" />
-                <title>Details User</title>
+                <title>Delete Product</title>
 
                 <link href="/css/styles.css" rel="stylesheet" />
                 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -24,42 +25,37 @@
                     <div id="layoutSidenav_content">
                         <main>
                             <div class="container-fluid px-4">
-                                <h1 class="mt-4">User</h1>
+                                <h1 class="mt-4">Product</h1>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                                    <li class="breadcrumb-item"><a href="/admin/user">Manage user</a></li>
-                                    <li class="breadcrumb-item active">detail user</li>
+                                    <li class="breadcrumb-item"><a href="/admin/user">Manage Product</a></li>
+                                    <li class="breadcrumb-item active">delete product</li>
                                 </ol>
 
 
                                 <div class="row">
                                     <div class="col-12 mx-auto">
                                         <div class="d-flex justify-content-between">
-                                            <h3>Users Details with id = ${user.id}</h3>
+                                            <h3>Delete the user with id = ${id}</h3>
                                         </div>
                                         <hr />
-
-                                        <div class="card" style="width: 60%;">
-
-                                            <div class="card-header">
-
-                                                User Information
-
+                                        <div class="alert alert-danger" role="alert">
+                                            Are you sure to delete this product ?
+                                        </div>
+                                        <hr />
+                                        <form:form method="POST" action="/admin/product/delete"
+                                            modelAttribute="newProduct">
+                                            <div class="mb-3" style="display: none;">
+                                                <label class="form-label">ID:</label>
+                                                <form:input class="form-control" path="id" type="number" />
                                             </div>
-
-                                            <ul class="list-group list-group-flush">
-
-                                                <li class="list-group-item">ID: ${user.id}</li>
-                                                <li class="list-group-item">Email: ${user.email}</li>
-                                                <li class="list-group-item">Full Name: ${user.fullName}</li>
-                                                <li class="list-group-item">Role: ${user.role.name}</li>
-                                                <li class="list-group-item">Address: ${user.address}</li>
-                                            </ul>
+                                            <button class="btn btn-danger">ConFirm</button>
+                                        </form:form>
+                                        <br>
+                                        <div class="d-flex justify-content">
+                                            <a href="/admin/product" class="btn btn-primary">Back</a>
                                         </div>
-                                        <hr />
-                                        <div class="d-flex justify-content-between">
-                                            <a href="/admin/user" class="btn btn-primary">Back</a>
-                                        </div>
+
                                     </div>
                                 </div>
 
