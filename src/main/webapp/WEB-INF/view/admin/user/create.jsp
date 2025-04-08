@@ -66,7 +66,7 @@
                                                     <c:set var="nameHasBindError">
                                                         <form:errors path="email" cssClass="valid-feedback" />
                                                     </c:set>
-                                                    <label class="form-label">Email address::</label>
+                                                    <label class="form-label">Email address:</label>
                                                     <form:input
                                                         class="form-control ${not empty nameHasBindError? 'is-invalid':''}"
                                                         path="email" type="email" />
