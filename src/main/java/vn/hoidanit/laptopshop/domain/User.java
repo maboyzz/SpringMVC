@@ -15,6 +15,7 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import vn.hoidanit.laptopshop.service.validator.StrongPassword;
 
 @Entity
 @Table(name = "users")
@@ -29,7 +30,7 @@ public class User {
     private String email;
 
     @NotNull
-    @Size(min = 3, message = "Password phải tối thiểu 2 ký tự")
+    @StrongPassword(message = "Password phải có tối thiểu 8 ký tự, chữ, số, chữ hoa và ký tự đặc biệt.")
     private String password;
 
     @NotNull(message = "Tên không được để trống")

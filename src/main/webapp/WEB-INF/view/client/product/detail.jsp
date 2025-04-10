@@ -87,6 +87,12 @@
                 <div class="container-fluid py-5 mt-5">
                     <div class="container py-5">
                         <div class="row g-4 mb-5">
+                            <div>
+                                <ol class="breadcrumb mb-4">
+                                    <li class="breadcrumb-item"><a href="/">home</a></li>
+                                    <li class="breadcrumb-item active">Chi tiết sản phẩm</li>
+                                </ol>
+                            </div>
                             <div class="col-lg-8 col-xl-9">
                                 <div class="row g-4">
                                     <div class="col-lg-6">
@@ -151,37 +157,49 @@
 
                                 </div>
                             </div>
+                            <div class="col-lg-4 col-xl-3">
+                                <div class="row g-4 fruite">
+                                    <div class="col-lg-12">
 
-                        </div>
-                        <h1 class="fw-bold mb-0">Related products</h1>
-                        <div class="vesitable">
-                            <div class="owl-carousel vegetable-carousel justify-content-center">
-                                <c:forEach var="products" items="${products}">
-                                    <div class="border border-primary rounded position-relative vesitable-item">
-                                        <div class="vesitable-img">
-                                            <img src="/images/product/${products.image}"
-                                                class="img-fluid w-100 rounded-top" alt="">
-                                        </div>
-                                        <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                            style="top: 10px; right: 10px;">${products.target}</div>
-                                        <div class="p-4 pb-0 rounded-bottom">
-                                            <h4><a href="/product/${product.id}">
-                                                    ${product.name}
-                                                </a></h4>
-                                            <p>${products.shortDesc}</p>
-                                            <div class="d-flex justify-content-between flex-lg-wrap">
-                                                <p class="text-dark fs-5 fw-bold">
-                                                    <fmt:formatNumber type="number" value="${products.price}" />
-                                                    đ
-                                                </p>
-                                                <a href="#"
-                                                    class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
-                                                        class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                                                    cart</a>
-                                            </div>
+                                        <div class="mb-4">
+                                            <h4>Categories</h4>
+                                            <ul class="list-unstyled fruite-categorie">
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Dell</a>
+                                                        <span>(3)</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Asus</a>
+                                                        <span>(5)</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Lenovo</a>
+                                                        <span>(2)</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Apple</a>
+                                                        <span>(8)</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="d-flex justify-content-between fruite-name">
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>HP</a>
+                                                        <span>(5)</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
-                                </c:forEach>
+
+                                </div>
+
                             </div>
                         </div>
                     </div>

@@ -31,6 +31,8 @@
                             <a href="/" class="nav-item nav-link active">Trang Chủ</a>
                             <a href="/product/" class="nav-item nav-link">Sản Phẩm</a>
 
+
+
                         </div>
                         <div class="d-flex m-3 me-0">
                             <button
@@ -43,7 +45,7 @@
                                     class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
                                     style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
                             </a>
-                            <a href="#" class="my-auto">
+                            <a href="login" class="my-auto">
                                 <i class="fas fa-user fa-2x"></i>
                             </a>
                         </div>
