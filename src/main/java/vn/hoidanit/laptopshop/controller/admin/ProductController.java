@@ -54,7 +54,7 @@ public class ProductController {
             System.out.println(">>>>" + error.getField() + " - " + error.getDefaultMessage());
         }
         if (newProductBindingResult.hasErrors()) {
-            return "/admin/product/create";
+            return "admin/product/create";
         }
         String img = this.uploadService.HandleSaveUploadFile(file, "product");
         product.setImage(img);
@@ -67,7 +67,7 @@ public class ProductController {
     public String getDetailsPage(Model model, @PathVariable Long id) {
         Product product = this.productService.findOneById(id);
         model.addAttribute("product", product);
-        return "/admin/product/detail";
+        return "admin/product/detail";
     }
 
     @GetMapping("/admin/product/update/{id}")
@@ -86,7 +86,7 @@ public class ProductController {
             System.out.println(">>>>" + error.getField() + " - " + error.getDefaultMessage());
         }
         if (newProductBindingResult.hasErrors()) {
-            return "/admin/product/update";
+            return "admin/product/update";
         }
 
         Product currentProduct = this.productService.findOneById(product.getId());

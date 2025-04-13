@@ -80,7 +80,7 @@ public class UserController {
             System.out.println(">>>>" + error.getField() + " - " + error.getDefaultMessage());
         }
         if (newUserBindingResult.hasErrors()) {
-            return "/admin/user/create";
+            return "admin/user/create";
         }
         String avatar = this.uploadService.HandleSaveUploadFile(file, "avatar");
         String hashPassword = this.passwordEncoder.encode(huy.getPassword());
@@ -108,7 +108,7 @@ public class UserController {
             System.out.println(">>>>" + error.getField() + " - " + error.getDefaultMessage());
         }
         if (newUserBindingResult.hasErrors()) {
-            return "/admin/user/update";
+            return "admin/user/update";
         }
         User currentUser = this.userService.getUserById(huy.getId());
         if (currentUser != null) {
