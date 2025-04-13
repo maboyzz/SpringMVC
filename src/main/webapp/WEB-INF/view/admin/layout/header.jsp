@@ -8,7 +8,9 @@
                     class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-                <a class="navbar-brand ps-3" href="/admin">Welcome, Nguyễn Trần Huy</a>
+                <a class="navbar-brand ps-3" href="/admin">Welcome,
+                    <c:out value="${pageContext.request.userPrincipal.name}" />
+                </a>
 
             </form>
             <!-- Navbar-->
@@ -22,7 +24,12 @@
                         <li>
                             <hr class="dropdown-divider" />
                         </li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        <li>
+                            <form method="post" action="/logout">
+                                <button class="dropdown-item">Logout</button>
+                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                            </form>
+                        </li>
                     </ul>
                 </li>
             </ul>
