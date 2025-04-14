@@ -27,7 +27,7 @@
                                                 <h3 class="text-center font-weight-light my-4">Login</h3>
                                             </div>
                                             <div class="card-body">
-                                                <form method="post" action="/login">
+                                                <form method="post" action="login">
                                                     <c:if test="${param.error != null}">
                                                         <div class="my-2" style="color: red;">Sai tài khoản hoặc mật
                                                             khẩu
@@ -46,6 +46,12 @@
                                                         <input class="form-control" id="inputPassword" type="password"
                                                             placeholder="Password" name="password" />
                                                         <label for="inputPassword">Password</label>
+                                                    </div>
+                                                    <div class="form-check mb-3">
+                                                        <input type="checkbox" name="remember-me"
+                                                            class="form-check-input" />
+                                                        <label class="form-check-label"
+                                                            for="inputRememberPassword">Remember Password</label>
                                                     </div>
                                                     <div>
                                                         <input type="hidden" name="${_csrf.parameterName}"
