@@ -79,7 +79,7 @@ public class ProductController {
 
     @PostMapping("/admin/product/update")
     public String potUpdateUser(Model model, @ModelAttribute("newProduct") @Valid Product product,
-            BindingResult newProductBindingResult, MultipartFile file) {
+            BindingResult newProductBindingResult, @RequestParam("imgFile") MultipartFile file) {
 
         List<FieldError> errors = newProductBindingResult.getFieldErrors();
         for (FieldError error : errors) {

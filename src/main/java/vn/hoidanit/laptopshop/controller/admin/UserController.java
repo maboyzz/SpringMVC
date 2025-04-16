@@ -84,16 +84,14 @@ public class UserController {
         }
         String avatar = this.uploadService.HandleSaveUploadFile(file, "avatar");
         String hashPassword = this.passwordEncoder.encode(huy.getPassword());
-
         huy.setRole(this.userService.getRoleByName(huy.getRole().getName()));
         huy.setAvatar(avatar);
         huy.setPassword(hashPassword);
-
         this.userService.handleSaveUser(huy);
         return "redirect:/admin/user";
     }
 
-    @RequestMapping("/admin/user/update/{id}")
+    @GetMapping("/admin/user/update/{id}")
     public String getUpdateUserPage(Model model, @PathVariable long id) {
         User currentUser = this.userService.getUserById(id);
         model.addAttribute("newUser", currentUser);
@@ -102,7 +100,7 @@ public class UserController {
 
     @PostMapping("/admin/user/update")
     public String potUpdateUser(Model model, @ModelAttribute("newUser") @Valid User huy,
-            BindingResult newUserBindingResult, MultipartFile file) {
+            BindingResult newUserBindingResult, @RequestParam("huyFile") MultipartFile file) {
         List<FieldError> errors = newUserBindingResult.getFieldErrors();
         for (FieldError error : errors) {
             System.out.println(">>>>" + error.getField() + " - " + error.getDefaultMessage());

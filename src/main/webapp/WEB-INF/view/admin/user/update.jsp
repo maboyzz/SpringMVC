@@ -59,7 +59,8 @@
                                     <div class="col-md-6 col-12 mx-auto">
                                         <h3>Update a user</h3>
                                         <hr />
-                                        <form:form method="post" action="/admin/user/update" modelAttribute="newUser">
+                                        <form:form method="post" action="/admin/user/update" modelAttribute="newUser"
+                                            enctype="multipart/form-data">
                                             <div class="mb-3" style="display: none;">
                                                 <label class="form-label">ID:</label>
                                                 <form:input class="form-control" path="id" type="number" />
@@ -67,7 +68,7 @@
                                             <div class="mb-3">
                                                 <label class="form-label">Email address:</label>
                                                 <form:input class="form-control" path="email" type="email"
-                                                    disabled="true" />
+                                                    style="display: none;" />
                                             </div>
                                             <div class="mb-3 col-12 col-md-6">
                                                 <c:set var="nameHasBindError">
