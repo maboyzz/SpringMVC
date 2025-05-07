@@ -77,4 +77,10 @@ public class HomePageController {
     public String getDenyPage(Model model) {
         return "client/auth/deny";
     }
+
+    @GetMapping("/cart")
+    public String getDetailPage(Model model) {
+        model.addAttribute("registerUser", new RegisterDTO());
+        return "client/cart/show";
+    }
 }
